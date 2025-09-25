@@ -1,0 +1,72 @@
+:root{
+  --bg:#0f1724;
+  --card:#071026;
+  --accent1:#ff6b6b;
+  --accent2:#7c5cff;
+  --accent3:#60d394;
+  --muted:#9aa6bb;
+  --glass: rgba(255,255,255,0.06);
+}
+
+/* Light mode variables will be toggled in body.light */
+body { margin:0; font-family: "Segoe UI", Roboto, Arial; background: linear-gradient(180deg,#071021,#071a3a 60%); color:#e6eef6; min-height:100vh; transition: background .3s, color .3s; }
+body.light { background: #f5f8fb; color: #1b1b1b; }
+header{ display:flex; justify-content:space-between; align-items:center; padding:18px 22px; gap:12px; }
+.brand h1{ margin:0; font-size:1.6rem; color:var(--accent2); letter-spacing:0.5px; }
+.brand .tag{ margin:2px 0 0 0; color:var(--muted); font-size:0.85rem; }
+.controls{ display:flex; gap:10px; align-items:center; }
+.controls input{ padding:8px 10px; border-radius:8px; border:none; width:220px; outline:none; }
+body.light .controls input{ background:#fff; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+.controls select{ padding:8px 10px; border-radius:8px; }
+.controls button{ padding:8px 10px; border-radius:8px; border:none; cursor:pointer; background:linear-gradient(90deg,var(--accent1),#ff9a9e); color:#fff; font-weight:700; }
+.controls #themeBtn{ background:transparent; color:var(--muted); font-weight:600; border:1px solid rgba(255,255,255,0.06); padding:7px 9px; border-radius:8px; }
+body.light .controls button{ background:linear-gradient(90deg,#7c5cff,#60d394); color:#fff; }
+
+/* grid */
+main{ padding:18px; }
+.movie-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:18px; }
+
+/* card */
+.card{ background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); padding:12px; border-radius:12px; box-shadow:0 8px 18px rgba(2,6,23,0.45); overflow:hidden; display:flex; flex-direction:column; gap:8px; }
+body.light .card{ background:#fff; box-shadow:0 6px 18px rgba(15,25,40,0.06); color:#111; }
+.poster{ width:100%; height:280px; object-fit:cover; border-radius:8px; background:#222; }
+.title{ font-weight:700; color:var(--accent3); margin:6px 0 0 0; font-size:1.05rem; }
+.meta{ color:var(--muted); font-size:0.9rem; margin-top:4px; }
+.row{ display:flex; gap:8px; align-items:center; margin-top:auto; }
+
+/* buttons */
+.btn{ padding:8px 10px; border-radius:8px; border:none; cursor:pointer; font-weight:700; }
+.view-btn{ background:linear-gradient(90deg,#7c5cff,#60d394); color:#fff; }
+.fav-btn{ background:linear-gradient(90deg,#ffb86b,#ff6b6b); color:#111; }
+
+/* modal */
+.modal{ display:none; position:fixed; inset:0; background: rgba(2,6,23,0.6); align-items:center; justify-content:center; z-index:40; }
+.modal-content{ background: linear-gradient(180deg,#071428,#0b2140); color:inherit; padding:18px; border-radius:12px; width:90%; max-width:920px; box-shadow:0 10px 30px rgba(2,6,23,0.7); position:relative; }
+body.light .modal-content{ background:linear-gradient(180deg,#fff,#f6fbff); color:#111; box-shadow:0 10px 30px rgba(10,20,40,0.06); }
+.modal-body{ display:flex; gap:16px; align-items:flex-start; }
+.modal-body img{ width:260px; height:380px; object-fit:cover; border-radius:10px; background:#333; }
+.modal-info{ flex:1; }
+.close-btn{ position:absolute; right:12px; top:8px; font-size:28px; cursor:pointer; color:#ff9a9e; }
+
+/* review list */
+#reviewsList{ max-height:200px; overflow:auto; padding-right:6px; margin-top:8px; }
+.review { background: rgba(255,255,255,0.02); padding:8px; border-radius:8px; margin-bottom:8px; }
+body.light .review{ background:#f9fbff; }
+
+/* form */
+.add-review textarea{ width:100%; border-radius:8px; padding:8px; border:none; resize:vertical; margin-top:6px; }
+.add-review select{ padding:8px; border-radius:8px; margin-left:8px; }
+
+/* watchlist */
+#watchItems{ margin-top:8px; }
+.watch-row{ display:flex; justify-content:space-between; padding:8px 6px; border-bottom:1px dashed rgba(255,255,255,0.04); margin-bottom:6px; }
+
+/* badges */
+.badge{ display:inline-block; padding:6px 8px; border-radius:8px; background:linear-gradient(90deg,#ff9a9e,#ffb86b); color:#111; font-weight:700; }
+
+/* responsive */
+@media(max-width:860px){
+  .modal-body{ flex-direction:column; align-items:center; }
+  .modal-body img{ width:80%; height:auto; }
+  .poster{ height:220px; }
+}
